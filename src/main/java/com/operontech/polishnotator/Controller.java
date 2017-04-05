@@ -29,7 +29,7 @@ import javafx.scene.control.TextField;
 public class Controller {
 
 	@FXML
-	TextField textFieldInput;
+	private TextField textFieldInput;
 
 	@FXML
 	protected void handleConvert(ActionEvent e) {
@@ -37,27 +37,27 @@ public class Controller {
 	}
 
 	@FXML
-	protected void actionButtonNot(ActionEvent e) {
+	protected void actionButtonNot() {
 		addToInput('~');
 	}
 
 	@FXML
-	protected void actionButtonAnd(ActionEvent e) {
+	protected void actionButtonAnd() {
 		addToInput('•');
 	}
 
 	@FXML
-	protected void actionButtonOr(ActionEvent e) {
+	protected void actionButtonOr() {
 		addToInput('∨');
 	}
 
 	@FXML
-	protected void actionButtonIfThen(ActionEvent e) {
+	protected void actionButtonIfThen() {
 		addToInput('⊃');
 	}
 
 	@FXML
-	protected void actionButtonOnlyIf(ActionEvent e) {
+	protected void actionButtonOnlyIf() {
 		addToInput('≡');
 	}
 
