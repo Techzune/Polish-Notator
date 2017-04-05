@@ -22,50 +22,57 @@
   ~ SOFTWARE
   -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="563.0" style="-fx-background-color: #3F51B5;" styleClass="line" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.operontech.polishnotator.Controller">
-    <children>
-        <Label layoutX="50.0" layoutY="24.0" style="-fx-text-fill: #FFFFFF;" text="standard notation:">
-            <font>
-                <Font name="Roboto Light" size="18.0" />
-            </font>
-        </Label>
-        <TextField fx:id="textFieldInput" accessibleText="standard notation input" layoutX="50.0" layoutY="47.0" prefHeight="30.0" prefWidth="350.0" promptText="input">
-            <font>
-                <Font name="Roboto Light" size="16.0" />
-            </font>
-        </TextField>
-        <Button id="buttonConvert" layoutX="85.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="45.0" prefWidth="280.0" text="convert to polish notation" textOverrun="CLIP">
-            <font>
-                <Font name="Roboto Bold" size="20.0" />
-            </font>
-        </Button>
-        <TextField fx:id="textFieldOutput" accessibleText="polish notation input" layoutX="50.0" layoutY="178.0" prefHeight="30.0" prefWidth="350.0" promptText="output">
-            <font>
-                <Font name="Roboto Light" size="16.0" />
-            </font>
-        </TextField>
-        <Label layoutX="50.0" layoutY="155.0" style="-fx-text-fill: #FFFFFF;" text="polish notation:">
-            <font>
-                <Font name="Roboto Light" size="18.0" />
-            </font>
-        </Label>
-        <Rectangle arcHeight="5.0" fill="#303f9f" height="233.0" layoutX="450.0" stroke="#303f9f" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);" width="2.0">
-            <effect>
-                <DropShadow />
-            </effect>
-        </Rectangle>
-        <Button layoutX="471.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="NOT ~" />
-        <Button layoutX="471.0" layoutY="61.0" mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="AND •" />
-        <Button layoutX="471.0" layoutY="100.0" mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="OR ∨" />
-        <Button layoutX="471.0" layoutY="139.0" mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="IF, THEN ⊃" />
-        <Button layoutX="471.0" layoutY="178.0" mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="ONLY IF ≡" />
-    </children>
+<?import javafx.scene.text.*?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0"
+      prefWidth="563.0" style="-fx-background-color: #3F51B5;" xmlns="http://javafx.com/javafx/8.0.111"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.operontech.polishnotator.Controller">
+    <Label layoutX="50.0" layoutY="24.0" style="-fx-text-fill: #FFFFFF;" text="standard notation:">
+        <font>
+            <Font name="Roboto Light" size="18.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="textFieldInput" accessibleText="standard notation input" layoutX="50.0" layoutY="47.0"
+               prefHeight="30.0" prefWidth="350.0" promptText="input">
+        <font>
+            <Font name="Roboto Light" size="16.0"/>
+        </font>
+    </TextField>
+    <Button id="buttonConvert" layoutX="85.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleConvert"
+            prefHeight="45.0" prefWidth="280.0" text="convert to polish notation" textOverrun="CLIP">
+        <font>
+            <Font name="Roboto Bold" size="20.0"/>
+        </font>
+    </Button>
+    <TextField fx:id="textFieldOutput" accessibleText="polish notation input" layoutX="50.0" layoutY="178.0"
+               prefHeight="30.0" prefWidth="350.0" promptText="output">
+        <font>
+            <Font name="Roboto Light" size="16.0"/>
+        </font>
+    </TextField>
+    <Label layoutX="50.0" layoutY="155.0" style="-fx-text-fill: #FFFFFF;" text="polish notation:">
+        <font>
+            <Font name="Roboto Light" size="18.0"/>
+        </font>
+    </Label>
+    <Rectangle arcHeight="5.0" fill="#303f9f" height="233.0" layoutX="450.0" stroke="#303f9f" strokeType="INSIDE"
+               strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);"
+               width="2.0">
+        <effect>
+            <DropShadow/>
+        </effect>
+    </Rectangle>
+    <Button layoutX="471.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0"
+            prefWidth="87.0" style="-fx-alignment: center-left;" text="NOT ~"/>
+    <Button layoutX="471.0" layoutY="61.0" mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0"
+            prefWidth="87.0" style="-fx-alignment: center-left;" text="AND •"/>
+    <Button layoutX="471.0" layoutY="100.0" mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0"
+            prefWidth="87.0" style="-fx-alignment: center-left;" text="OR ∨"/>
+    <Button layoutX="471.0" layoutY="139.0" mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0"
+            prefWidth="87.0" style="-fx-alignment: center-left;" text="IF, THEN ⊃"/>
+    <Button layoutX="471.0" layoutY="178.0" mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0"
+            prefWidth="87.0" style="-fx-alignment: center-left;" text="ONLY IF ≡"/>
 </Pane>
