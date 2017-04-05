@@ -66,7 +66,7 @@ public class Controller {
 
 	private void handleButtonOperators(String symbol) {
 		// Add symbol to textFieldInput
-		textFieldInput.setText(textFieldInput.getText() + symbol);
+		textFieldInput.replaceSelection(symbol);
 
 		// Return focus to textFieldInput from button
 		textFieldInput.requestFocus();
