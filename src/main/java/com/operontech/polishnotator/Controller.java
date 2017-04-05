@@ -71,6 +71,5 @@ public class Controller {
 		// Return focus to textFieldInput from button
 		textFieldInput.requestFocus();
 		textFieldInput.deselect();
-		textFieldInput.end();
 	}
 }

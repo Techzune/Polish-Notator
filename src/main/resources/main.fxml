@@ -79,27 +79,27 @@
         <rowConstraints>
             <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
-        <Button mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="NOT ~">
+        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="NOT ~">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="AND •" GridPane.columnIndex="1">
+        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="AND •" GridPane.columnIndex="1">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="OR ∨" GridPane.columnIndex="2">
+        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="OR ∨" GridPane.columnIndex="2">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0" prefWidth="100.0" text="IF, THEN ⊃" GridPane.columnIndex="4">
+        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0" prefWidth="100.0" text="IF, THEN ⊃" GridPane.columnIndex="4">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="ONLY IF ≡" GridPane.columnIndex="3">
+        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="ONLY IF ≡" GridPane.columnIndex="3">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
