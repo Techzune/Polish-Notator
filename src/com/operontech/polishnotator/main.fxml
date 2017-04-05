@@ -8,19 +8,19 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="563.0" style="-fx-background-color: #3F51B5;" styleClass="line" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="563.0" style="-fx-background-color: #3F51B5;" styleClass="line" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.operontech.polishnotator.Controller">
    <children>
       <Label layoutX="50.0" layoutY="24.0" style="-fx-text-fill: #FFFFFF;" text="standard notation:">
          <font>
             <Font name="Roboto Light" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="50.0" layoutY="47.0" prefHeight="30.0" prefWidth="350.0" promptText="input">
+      <TextField fx:id="textFieldInput" layoutX="50.0" layoutY="47.0" prefHeight="30.0" prefWidth="350.0" promptText="input">
          <font>
             <Font name="Roboto Light" size="16.0" />
          </font>
       </TextField>
-      <Button layoutX="85.0" layoutY="94.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="280.0" style="-fx-background-color: #FF9800; -fx-text-fill: #FFFFFF;" text="convert to polish notation" textOverrun="CLIP">
+      <Button layoutX="85.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="45.0" prefWidth="280.0" style="-fx-background-color: #FF9800; -fx-text-fill: #FFFFFF;" text="convert to polish notation" textOverrun="CLIP">
          <font>
             <Font name="Roboto Bold" size="20.0" />
          </font>
@@ -40,9 +40,10 @@
             <DropShadow />
          </effect>
       </Rectangle>
-      <Button layoutX="470.0" layoutY="29.0" mnemonicParsing="false" prefWidth="75.0" text="AND" />
-      <Button layoutX="470.0" layoutY="160.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" text="OR" />
-      <Button layoutX="470.0" layoutY="70.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" text="IF" />
-      <Button layoutX="470.0" layoutY="115.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" text="IS" />
+      <Button layoutX="471.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="NOT ~" />
+      <Button layoutX="471.0" layoutY="61.0" mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="AND •" />
+      <Button layoutX="471.0" layoutY="100.0" mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="OR ∨" />
+      <Button layoutX="471.0" layoutY="139.0" mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="IF, THEN ⊃" />
+      <Button layoutX="471.0" layoutY="178.0" mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0" prefWidth="87.0" style="-fx-alignment: center-left;" text="ONLY IF ≡" />
    </children>
 </Pane>
