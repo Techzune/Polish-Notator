@@ -32,6 +32,9 @@ public class Controller {
 	private TextField textFieldInput;
 
 	@FXML
+	private TextField textFieldOutput;
+
+	@FXML
 	protected void handleConvert(ActionEvent e) {
 		System.out.println(e.getSource().toString());
 	}
