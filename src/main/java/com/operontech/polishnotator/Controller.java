@@ -41,30 +41,30 @@ public class Controller {
 
 	@FXML
 	protected void actionButtonNot() {
-		handleButtonOperators('~');
+		handleButtonOperators("~");
 	}
 
 	@FXML
 	protected void actionButtonAnd() {
-		handleButtonOperators('•');
+		handleButtonOperators(" • ");
 	}
 
 	@FXML
 	protected void actionButtonOr() {
-		handleButtonOperators('∨');
+		handleButtonOperators(" ∨ ");
 	}
 
 	@FXML
 	protected void actionButtonIfThen() {
-		handleButtonOperators('⊃');
+		handleButtonOperators(" ⊃ ");
 	}
 
 	@FXML
 	protected void actionButtonOnlyIf() {
-		handleButtonOperators('≡');
+		handleButtonOperators(" ≡ ");
 	}
 
-	private void handleButtonOperators(char symbol) {
+	private void handleButtonOperators(String symbol) {
 		// Add symbol to textFieldInput
 		textFieldInput.setText(textFieldInput.getText() + symbol);
 
