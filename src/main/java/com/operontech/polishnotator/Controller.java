@@ -65,6 +65,12 @@ public class Controller {
 	}
 
 	private void addToInput(char symbol) {
+		// Add symbol to textFieldInput
 		textFieldInput.setText(textFieldInput.getText() + symbol);
+
+		// Return focus to textFieldInput from button
+		textFieldInput.requestFocus();
+		textFieldInput.deselect();
+		textFieldInput.end();
 	}
 }
