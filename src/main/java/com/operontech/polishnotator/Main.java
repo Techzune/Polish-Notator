@@ -32,10 +32,15 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		// Use FXML file as scene
 		Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
-		primaryStage.setTitle("Polish Notator");
 		primaryStage.setScene(new Scene(root, 563, 233));
+
+		// Change window properties
+		primaryStage.setTitle("Polish Notator");
 		primaryStage.setResizable(false);
+
+		// Display the stage
 		primaryStage.show();
 	}
 

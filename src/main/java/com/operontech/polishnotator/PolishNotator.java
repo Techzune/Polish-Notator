@@ -22,5 +22,9 @@
 
 package com.operontech.polishnotator;
 
+/**
+ * Handles the conversion of notations from Standard to Polish
+ */
 public class PolishNotator {
+
 }
