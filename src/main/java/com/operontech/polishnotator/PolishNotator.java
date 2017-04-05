@@ -28,14 +28,30 @@ package com.operontech.polishnotator;
 public class PolishNotator {
 	public static String convertToEnglish(final String input) {
 		final StringBuilder result = new StringBuilder();
+		char inChar;
 		for (int i = 0; i < input.length(); i++) {
-			final char inChar = input.charAt(i);
+			inChar = input.charAt(i);
 			if (inChar == '(') {
+				final String end = goUntilParenthesis(input.substring(i + 1));
 				//@formatter:off
 				result.append('(')
-						  .append(convertToEnglish(goUntilParenthesis(input.substring(i))))
-						  .append(')');
+					  .append(convertToEnglish(end))
+					  .append(')');
 				//@formatter:on
+				System.out.println(end);
+				i += end.length() + 1;
+			} else if (inChar == Operator.NOT.getSymbol()) {
+				result.append("NOT ");
+			} else if (inChar == Operator.AND.getSymbol()) {
+				result.append("AND ");
+			} else if (inChar == Operator.OR.getSymbol()) {
+				result.append("OR ");
+			} else if (inChar == Operator.IF_THEN.getSymbol()) {
+				result.append("IF_THEN ");
+			} else if (inChar == Operator.ONLY_IF.getSymbol()) {
+				result.append("ONLY_IF ");
+			} else {
+				result.append(inChar).append(' ');
 			}
 		}
 		return result.toString();
@@ -43,11 +59,11 @@ public class PolishNotator {
 
 	private static String goUntilParenthesis(final String str) {
 		final StringBuilder result = new StringBuilder();
-		for (final char inChar : str.toCharArray()) {
-			if (inChar != ')') {
-				result.append(inChar);
+		for (final char curChar : str.toCharArray()) {
+			if (curChar != ')') {
+				result.append(curChar);
 			} else {
-				return str;
+				break;
 			}
 		}
 		return result.toString();

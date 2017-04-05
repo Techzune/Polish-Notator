@@ -35,8 +35,8 @@ public class Controller {
 	private TextField textFieldOutput;
 
 	@FXML
-	protected void handleConvert(ActionEvent e) {
-		System.out.println(e.getSource().toString());
+	protected void handleConvert(final ActionEvent e) {
+		textFieldOutput.setText(PolishNotator.convertToEnglish(textFieldInput.getText().replaceAll("\\s", "")));
 	}
 
 	@FXML
@@ -64,7 +64,7 @@ public class Controller {
 		handleButtonOperators(Operator.ONLY_IF);
 	}
 
-	private void handleButtonOperators(Operator op) {
+	private void handleButtonOperators(final Operator op) {
 		// Add symbol to textFieldInput
 		textFieldInput.replaceSelection(op.getSpacedSymbol());
 
