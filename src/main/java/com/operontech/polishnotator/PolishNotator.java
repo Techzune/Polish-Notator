@@ -26,5 +26,30 @@ package com.operontech.polishnotator;
  * Handles the conversion of notations from Standard to Polish
  */
 public class PolishNotator {
+	public static String convertToEnglish(final String input) {
+		final StringBuilder result = new StringBuilder();
+		for (int i = 0; i < input.length(); i++) {
+			final char inChar = input.charAt(i);
+			if (inChar == '(') {
+				//@formatter:off
+				result.append('(')
+						  .append(convertToEnglish(goUntilParenthesis(input.substring(i))))
+						  .append(')');
+				//@formatter:on
+			}
+		}
+		return result.toString();
+	}
 
+	private static String goUntilParenthesis(final String str) {
+		final StringBuilder result = new StringBuilder();
+		for (final char inChar : str.toCharArray()) {
+			if (inChar != ')') {
+				result.append(inChar);
+			} else {
+				return str;
+			}
+		}
+		return result.toString();
+	}
 }
