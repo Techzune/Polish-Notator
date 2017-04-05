@@ -22,54 +22,26 @@
 
 package com.operontech.polishnotator;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+public enum Operator {
+	NOT('~', false), AND('•', true), OR('∨', true), IF_THEN('⊃', true), ONLY_IF('≡', true);
 
-public class Controller {
+	char symbol;
+	boolean spaceable;
 
-	@FXML
-	private TextField textFieldInput;
-
-	@FXML
-	private TextField textFieldOutput;
-
-	@FXML
-	protected void handleConvert(ActionEvent e) {
-		System.out.println(e.getSource().toString());
+	Operator(char symbol, boolean spaceable) {
+		this.symbol = symbol;
+		this.spaceable = spaceable;
 	}
 
-	@FXML
-	protected void actionButtonNot() {
-		handleButtonOperators(Operator.NOT);
+	public char getSymbol() {
+		return symbol;
 	}
 
-	@FXML
-	protected void actionButtonAnd() {
-		handleButtonOperators(Operator.AND);
+	public String getSpacedSymbol() {
+		if (spaceable) {
+			return " " + symbol + " ";
+		}
+		return String.valueOf(symbol);
 	}
 
-	@FXML
-	protected void actionButtonOr() {
-		handleButtonOperators(Operator.OR);
-	}
-
-	@FXML
-	protected void actionButtonIfThen() {
-		handleButtonOperators(Operator.IF_THEN);
-	}
-
-	@FXML
-	protected void actionButtonOnlyIf() {
-		handleButtonOperators(Operator.ONLY_IF);
-	}
-
-	private void handleButtonOperators(Operator op) {
-		// Add symbol to textFieldInput
-		textFieldInput.replaceSelection(op.getSpacedSymbol());
-
-		// Return focus to textFieldInput from button
-		textFieldInput.requestFocus();
-		textFieldInput.deselect();
-	}
 }
