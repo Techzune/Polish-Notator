@@ -25,10 +25,10 @@ package com.operontech.polishnotator;
 public enum Operator {
 	NOT('~', false), AND('•', true), OR('∨', true), IF_THEN('⊃', true), ONLY_IF('≡', true);
 
-	char symbol;
-	boolean spaceable;
+	final char symbol;
+	final boolean spaceable;
 
-	Operator(char symbol, boolean spaceable) {
+	Operator(final char symbol, final boolean spaceable) {
 		this.symbol = symbol;
 		this.spaceable = spaceable;
 	}
