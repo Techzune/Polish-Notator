@@ -42,7 +42,7 @@
         </Label>
         <TextField fx:id="textFieldInput" accessibleText="standard notation input" layoutY="34.0" prefHeight="32.0" prefWidth="592.0" promptText="input">
             <font>
-                <Font name="Roboto Light" size="24.0" />
+                <Font name="Roboto Condensed" size="24.0" />
             </font>
         </TextField>
     </Pane>
@@ -54,7 +54,7 @@
     <Pane layoutX="53.0" layoutY="290.0">
         <TextField fx:id="textFieldOutput" accessibleText="polish notation input" editable="false" layoutY="34.0" prefHeight="32.0" prefWidth="592.0" promptText="output">
             <font>
-                <Font name="Roboto Light" size="24.0" />
+                <Font name="Consolas" size="24.0" />
             </font>
         </TextField>
         <Label style="-fx-text-fill: #FFFFFF;" text="polish notation:">
