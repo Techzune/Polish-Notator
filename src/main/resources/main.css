@@ -20,3 +20,15 @@
  * SOFTWARE
  */
 
+#buttonConvert {
+    -fx-background-color: #FF9800;
+    -fx-text-fill: white;
+}
+
+#buttonConvert:hover {
+    -fx-background-color: #ef8e00;
+}
+
+#buttonConvert:pressed {
+    -fx-background-color: #cd7d00;
+}

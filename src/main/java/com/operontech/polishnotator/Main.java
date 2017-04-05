@@ -32,8 +32,9 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// Use FXML file as scene
+		// Use FXML file as scene, use CSS for style
 		Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
+		root.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
 		primaryStage.setScene(new Scene(root, 563, 233));
 
 		// Change window properties

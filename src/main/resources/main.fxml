@@ -42,7 +42,7 @@
                 <Font name="Roboto Light" size="16.0" />
             </font>
         </TextField>
-        <Button layoutX="85.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="45.0" prefWidth="280.0" style="-fx-background-color: #FF9800; -fx-text-fill: #FFFFFF;" text="convert to polish notation" textOverrun="CLIP">
+        <Button id="buttonConvert" layoutX="85.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="45.0" prefWidth="280.0" text="convert to polish notation" textOverrun="CLIP">
             <font>
                 <Font name="Roboto Bold" size="20.0" />
             </font>
