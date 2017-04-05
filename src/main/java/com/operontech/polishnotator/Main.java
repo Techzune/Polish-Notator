@@ -32,7 +32,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
 		primaryStage.setTitle("Polish Notator");
 		primaryStage.setScene(new Scene(root, 563, 233));
 		primaryStage.setResizable(false);
