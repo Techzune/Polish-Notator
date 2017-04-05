@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (c) 2017 Jordan Stremming
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE
+  -->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0"
+      prefWidth="563.0" style="-fx-background-color: #3F51B5;" styleClass="line"
+      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.operontech.polishnotator.Controller">
+    <children>
+        <Label layoutX="50.0" layoutY="24.0" style="-fx-text-fill: #FFFFFF;" text="standard notation:">
+            <font>
+                <Font name="Roboto Light" size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="textFieldInput" layoutX="50.0" layoutY="47.0" prefHeight="30.0" prefWidth="350.0"
+                   promptText="input">
+            <font>
+                <Font name="Roboto Light" size="16.0"/>
+            </font>
+        </TextField>
+        <Button layoutX="85.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="45.0"
+                prefWidth="280.0" style="-fx-background-color: #FF9800; -fx-text-fill: #FFFFFF;"
+                text="convert to polish notation" textOverrun="CLIP">
+            <font>
+                <Font name="Roboto Bold" size="20.0"/>
+            </font>
+        </Button>
+        <TextField layoutX="50.0" layoutY="178.0" prefHeight="30.0" prefWidth="350.0" promptText="output">
+            <font>
+                <Font name="Roboto Light" size="16.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="50.0" layoutY="155.0" style="-fx-text-fill: #FFFFFF;" text="polish notation:">
+            <font>
+                <Font name="Roboto Light" size="18.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" fill="#303f9f" height="233.0" layoutX="450.0" stroke="#303f9f" strokeType="INSIDE"
+                   strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);"
+                   width="2.0">
+            <effect>
+                <DropShadow/>
+            </effect>
+        </Rectangle>
+        <Button layoutX="471.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0"
+                prefWidth="87.0" style="-fx-alignment: center-left;" text="NOT ~"/>
+        <Button layoutX="471.0" layoutY="61.0" mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0"
+                prefWidth="87.0" style="-fx-alignment: center-left;" text="AND •"/>
+        <Button layoutX="471.0" layoutY="100.0" mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0"
+                prefWidth="87.0" style="-fx-alignment: center-left;" text="OR ∨"/>
+        <Button layoutX="471.0" layoutY="139.0" mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0"
+                prefWidth="87.0" style="-fx-alignment: center-left;" text="IF, THEN ⊃"/>
+        <Button layoutX="471.0" layoutY="178.0" mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0"
+                prefWidth="87.0" style="-fx-alignment: center-left;" text="ONLY IF ≡"/>
+    </children>
+</Pane>
