@@ -33,10 +33,19 @@ public enum Operator {
 		this.spaceable = spaceable;
 	}
 
+	/**
+	 * Returns the symbol associated with the operator
+	 * @return the symbol
+	 */
 	public char getSymbol() {
 		return symbol;
 	}
 
+	/**
+	 * Returns the symbol with a space preceding and following the symbol.
+	 * If the symbol is not "spaceable," only the symbol will be returned.
+	 * @return the spaced/regular symbol
+	 */
 	public String getSpacedSymbol() {
 		if (spaceable) {
 			return " " + symbol + " ";
