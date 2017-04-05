@@ -35,7 +35,7 @@ public class Main extends Application {
 		// Use FXML file as scene, use CSS for style
 		Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
 		root.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
-		primaryStage.setScene(new Scene(root, 563, 233));
+		primaryStage.setScene(new Scene(root, 800, 400));
 
 		// Change window properties
 		primaryStage.setTitle("Polish Notator");
