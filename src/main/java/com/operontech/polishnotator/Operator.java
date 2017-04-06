@@ -22,14 +22,27 @@
 
 package com.operontech.polishnotator;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum Operator {
-	NOT('~', false), AND('•', true), OR('∨', true), IF_THEN('⊃', true), ONLY_IF('≡', true);
+	NOT('~', 'N', false), AND('•', 'C', true), OR('∨', 'D', true), IF_THEN('⊃', 'I', true), ONLY_IF('≡', 'B', true);
 
 	final char symbol;
+	final char polishLetter;
 	final boolean spaceable;
 
-	Operator(final char symbol, final boolean spaceable) {
+	private static final Map<Character, Operator> map = new HashMap<>();
+
+	static {
+		for (final Operator opEnum : Operator.values()) {
+			map.put(opEnum.getSymbol(), opEnum);
+		}
+	}
+
+	Operator(final char symbol, final char polishLetter, final boolean spaceable) {
 		this.symbol = symbol;
+		this.polishLetter = polishLetter;
 		this.spaceable = spaceable;
 	}
 
@@ -51,6 +64,23 @@ public enum Operator {
 			return " " + symbol + " ";
 		}
 		return String.valueOf(symbol);
+	}
+
+	/**
+	 * Returns the Polish notation letter associated with the operator
+	 * @return the letter
+	 */
+	public char getPolishLetter() {
+		return polishLetter;
+	}
+
+	/**
+	 * Gets the Operator associated with that character
+	 * @param character the character to lookup
+	 * @return the Operator that is associated with that character
+	 */
+	public static Operator valueOf(final char character) {
+		return map.get(character);
 	}
 
 }
