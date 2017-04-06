@@ -36,7 +36,7 @@ public class Controller {
 
 	@FXML
 	protected void handleConvert(final ActionEvent e) {
-		textFieldOutput.setText(PolishNotator.convertToEnglish(textFieldInput.getText().replaceAll("\\s", "")));
+		textFieldOutput.setText(PolishNotator.convertFromStandard(textFieldInput.getText().replaceAll("\\s", "")));
 	}
 
 	@FXML
