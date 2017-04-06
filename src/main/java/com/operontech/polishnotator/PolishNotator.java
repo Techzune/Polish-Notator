@@ -26,34 +26,59 @@ package com.operontech.polishnotator;
  * Handles the conversion of notations from Standard to Polish
  */
 public class PolishNotator {
-	public static String convertToEnglish(final String input) {
+	public static String convertFromStandard(final String input) {
+		// Builds the String for the return
 		final StringBuilder result = new StringBuilder();
-		char inChar;
-		for (int i = 0; i < input.length(); i++) {
-			inChar = input.charAt(i);
-			if (inChar == '(') {
-				final String end = goUntilParenthesis(input.substring(i + 1));
-				//@formatter:off
-				result.append('(')
-					  .append(convertToEnglish(end))
-					  .append(')');
-				//@formatter:on
-				System.out.println(end);
-				i += end.length() + 1;
-			} else if (inChar == Operator.NOT.getSymbol()) {
-				result.append("NOT ");
-			} else if (inChar == Operator.AND.getSymbol()) {
-				result.append("AND ");
-			} else if (inChar == Operator.OR.getSymbol()) {
-				result.append("OR ");
-			} else if (inChar == Operator.IF_THEN.getSymbol()) {
-				result.append("IF_THEN ");
-			} else if (inChar == Operator.ONLY_IF.getSymbol()) {
-				result.append("ONLY_IF ");
+
+		// Hold current index, current character, and the matching operator
+		int curIndex = 0;
+		Character inChar = null;
+		Operator curOperator = null;
+
+		// Search for an operator
+		while ((curOperator == null || curOperator == Operator.NOT) && curIndex < input.length()) {
+			inChar = input.charAt(curIndex);
+			curOperator = Operator.valueOf(inChar);
+			curIndex++;
+		}
+
+		if (inChar != null) {
+			// If the current character is an operator
+			if (curOperator != null) {
+				// Don't add a space beforehand if it's a NOT operator
+				if (curOperator != Operator.NOT) {
+					result.append(" ");
+				}
+
+				// Add the current operator to the return string
+				result.append(curOperator.getPolishLetter());
+
 			} else {
-				result.append(inChar).append(' ');
+				result.append(Character.toLowerCase(inChar));
+			}
+
+			// As long as the current operator isn't a NOT operator
+			if (curOperator != Operator.NOT) {
+				try {
+					final String leftBin = input.substring(0, curIndex - 1);
+					if (leftBin.length() > 0) {
+						result.append(convertFromStandard(leftBin));
+					}
+				} catch (final Exception e) {
+					System.out.println("Exception!");
+				}
+			}
+
+			try {
+				final String rightBin = input.substring(curIndex);
+				if (rightBin.length() > 0) {
+					result.append(convertFromStandard(rightBin));
+				}
+			} catch (final Exception e) {
+				System.out.println("Exception!");
 			}
 		}
+
 		return result.toString();
 	}
 
