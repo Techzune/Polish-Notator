@@ -38,7 +38,7 @@ public class Main extends Application {
 		primaryStage.setScene(new Scene(root, 850, 400));
 
 		// Change window properties
-		primaryStage.setTitle("Polish Notator");
+		primaryStage.setTitle("Polish Notator BETA");
 		primaryStage.setResizable(false);
 
 		// Display the stage
