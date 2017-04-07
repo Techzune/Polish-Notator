@@ -26,8 +26,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum Operator {
-	NOT('~', 'N', false), AND('•', 'C', true), OR('∨', 'D', true), IF_THEN('⊃', 'I', true), ONLY_IF('≡', 'B', true);
+	CLOSED_PAREN(')', ' ', 0, false), NOT('~', 'N', 10, false), AND('•', 'C', 2, true), OR('∨', 'D', 3, true), IF_THEN('⊃', 'I', 4, true), ONLY_IF('≡', 'B', 5, true);
 
+	final int precedence;
 	final char symbol;
 	final char polishLetter;
 	final boolean spaceable;
@@ -40,9 +41,10 @@ public enum Operator {
 		}
 	}
 
-	Operator(final char symbol, final char polishLetter, final boolean spaceable) {
+	Operator(final char symbol, final char polishLetter, final int precedence, final boolean spaceable) {
 		this.symbol = symbol;
 		this.polishLetter = polishLetter;
+		this.precedence = precedence;
 		this.spaceable = spaceable;
 	}
 
@@ -74,6 +76,10 @@ public enum Operator {
 		return polishLetter;
 	}
 
+	public int getPrecedence() {
+		return precedence;
+	}
+
 	/**
 	 * Gets the Operator associated with that character
 	 * @param character the character to lookup
@@ -82,5 +88,4 @@ public enum Operator {
 	public static Operator valueOf(final char character) {
 		return map.get(character);
 	}
-
 }
