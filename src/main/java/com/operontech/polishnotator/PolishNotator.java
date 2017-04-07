@@ -22,75 +22,67 @@
 
 package com.operontech.polishnotator;
 
+import java.util.Stack;
+
 /**
  * Handles the conversion of notations from Standard to Polish
  */
 public class PolishNotator {
-	public static String convertFromStandard(final String input) {
-		// Builds the String for the return
+
+	public static String convertToStandard(final String input) {
+		// Reverse the input to loop over
+		final String rExpression = new StringBuilder(input).reverse().toString();
+
+		// Create stacks for the operands and the operators
 		final StringBuilder result = new StringBuilder();
+		final Stack<Operator> stack = new Stack<>();
 
-		// Hold current index, current character, and the matching operator
-		int curIndex = 0;
-		Character inChar = null;
-		Operator curOperator = null;
+		// Create a holder variable for the operator
+		Operator asOp;
 
-		// Search for an operator
-		while ((curOperator == null || curOperator == Operator.NOT) && curIndex < input.length()) {
-			inChar = input.charAt(curIndex);
-			curOperator = Operator.valueOf(inChar);
-			curIndex++;
-		}
+		// This is the shunting-yard algorithm in reverse
 
-		if (inChar != null) {
-			// If the current character is an operator
-			if (curOperator != null) {
-				// Don't add a space beforehand if it's a NOT operator
-				if (curOperator != Operator.NOT) {
-					result.append(" ");
-				}
+		for (final char token : rExpression.toCharArray()) {
+			// Assign the holder variable to the Operator of the token
+			// if this token is not an operator, this will just be null
+			asOp = Operator.valueOf(token);
 
-				// Add the current operator to the return string
-				result.append(curOperator.getPolishLetter());
+			if (token == ')') {
+				// Check if the token is a CLOSED_PAREN operator
+				// push it to the operand stack
+				stack.push(asOp);
+				result.append(' ');
 
-			} else {
-				result.append(Character.toLowerCase(inChar));
-			}
-
-			// As long as the current operator isn't a NOT operator
-			if (curOperator != Operator.NOT) {
-				try {
-					final String leftBin = input.substring(0, curIndex - 1);
-					if (leftBin.length() > 0) {
-						result.append(convertFromStandard(leftBin));
+			} else if (token == '(') {
+				// Check if the token is an open parenthesis operator
+				// if the stack is not empty, append until CLOSED_PAREN
+				while (!stack.isEmpty()) {
+					final Operator top = stack.pop();
+					if (top == Operator.CLOSED_PAREN) {
+						break;
 					}
-				} catch (final Exception e) {
-					System.out.println("Exception!");
+					result.append(top.getPolishLetter());
 				}
-			}
 
-			try {
-				final String rightBin = input.substring(curIndex);
-				if (rightBin.length() > 0) {
-					result.append(convertFromStandard(rightBin));
-				}
-			} catch (final Exception e) {
-				System.out.println("Exception!");
-			}
-		}
+			} else if (asOp == null) {
+				// If the token is not an operator, add it to the result
+				result.append(Character.toLowerCase(token));
 
-		return result.toString();
-	}
-
-	private static String goUntilParenthesis(final String str) {
-		final StringBuilder result = new StringBuilder();
-		for (final char curChar : str.toCharArray()) {
-			if (curChar != ')') {
-				result.append(curChar);
 			} else {
-				break;
+				// Otherwise, pop existing higher-precedence operators and push the new one
+				while (!stack.isEmpty() && stack.peek().getPrecedence() > asOp.getPrecedence()) {
+					result.append(stack.pop().getPolishLetter());
+				}
+				stack.push(asOp);
 			}
 		}
-		return result.toString();
+
+		// Append any remaining operators
+		while (!stack.isEmpty()) {
+			result.append(stack.pop().getPolishLetter());
+		}
+
+		// Reverse the result string and return it
+		return result.reverse().toString();
 	}
 }
