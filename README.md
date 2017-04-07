@@ -1,5 +1,6 @@
 # Polish Notator #
 created by: Jordan Stremming
+
 Currently this program is in BETA--this means that things may break a lot and are not perfect!
 ### Installation
 
