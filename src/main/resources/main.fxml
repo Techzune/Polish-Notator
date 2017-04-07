@@ -23,6 +23,7 @@
   -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -106,24 +107,34 @@
             </font>
         </Button>
     </GridPane>
-   <Text fill="WHITE" layoutX="690.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BETA 1" textAlignment="CENTER" underline="true" wrappingWidth="145.2923583984375">
+   <Text fill="WHITE" layoutX="690.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BETA 1" textAlignment="CENTER" underline="true" wrappingWidth="145.2923583984375">
       <font>
          <Font name="Roboto" size="24.0" />
       </font>
    </Text>
-   <Text fill="#cccccc" layoutX="690.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1) input standard notation" wrappingWidth="145.2923583984375">
+   <Text fill="#cccccc" layoutX="690.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1) input standard notation" wrappingWidth="145.2923583984375">
       <font>
          <Font name="Roboto" size="16.0" />
       </font>
    </Text>
-   <Text fill="#cccccc" layoutX="690.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2) press the convert button" wrappingWidth="145.2923583984375">
+   <Text fill="#cccccc" layoutX="690.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2) press the convert button" wrappingWidth="145.2923583984375">
       <font>
          <Font name="Roboto" size="16.0" />
       </font>
    </Text>
-   <Text fill="#cccccc" layoutX="690.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3) Magic" wrappingWidth="145.2923583984375">
+   <Text fill="#cccccc" layoutX="690.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3) magic happens!" wrappingWidth="145.2923583984375">
       <font>
          <Font name="Roboto" size="16.0" />
       </font>
    </Text>
+   <Hyperlink alignment="CENTER" layoutX="690.0" layoutY="376.0" onAction="#showBitBucket" prefHeight="13.0" prefWidth="145.0" text="view source code" textAlignment="CENTER" textFill="WHITE" underline="true">
+      <font>
+         <Font name="Roboto Light" size="12.0" />
+      </font>
+   </Hyperlink>
+   <Hyperlink alignment="CENTER" layoutX="682.0" layoutY="361.0" onAction="#showBitBucket" prefHeight="21.0" prefWidth="161.0" text="© Jordan Stremming 2017" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="Roboto Light" size="12.0" />
+      </font>
+   </Hyperlink>
 </Pane>

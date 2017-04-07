@@ -26,6 +26,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+import java.awt.*;
+import java.net.URI;
+
 public class Controller {
 
 	@FXML
@@ -62,6 +65,15 @@ public class Controller {
 	@FXML
 	protected void actionButtonOnlyIf() {
 		handleButtonOperators(Operator.ONLY_IF);
+	}
+
+	@FXML
+	protected void showBitBucket() {
+		try {
+			Desktop.getDesktop().browse(new URI("http://bitbucket.org/Techzune/polish-notator"));
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void handleButtonOperators(final Operator op) {
