@@ -32,8 +32,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #3F51B5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.operontech.polishnotator.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="850.0" style="-fx-background-color: #3F51B5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.operontech.polishnotator.Controller">
     <Pane layoutX="53.0" layoutY="30.0">
         <Label style="-fx-text-fill: #FFFFFF;" text="standard notation:">
             <font>
@@ -105,4 +106,24 @@
             </font>
         </Button>
     </GridPane>
+   <Text fill="WHITE" layoutX="690.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BETA 1" textAlignment="CENTER" underline="true" wrappingWidth="145.2923583984375">
+      <font>
+         <Font name="Roboto" size="24.0" />
+      </font>
+   </Text>
+   <Text fill="#cccccc" layoutX="690.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1) input standard notation" wrappingWidth="145.2923583984375">
+      <font>
+         <Font name="Roboto" size="16.0" />
+      </font>
+   </Text>
+   <Text fill="#cccccc" layoutX="690.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2) press the convert button" wrappingWidth="145.2923583984375">
+      <font>
+         <Font name="Roboto" size="16.0" />
+      </font>
+   </Text>
+   <Text fill="#cccccc" layoutX="690.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3) Magic" wrappingWidth="145.2923583984375">
+      <font>
+         <Font name="Roboto" size="16.0" />
+      </font>
+   </Text>
 </Pane>

@@ -31,11 +31,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(final Stage primaryStage) throws Exception {
 		// Use FXML file as scene, use CSS for style
-		Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
+		final Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
 		root.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
-		primaryStage.setScene(new Scene(root, 800, 400));
+		primaryStage.setScene(new Scene(root, 850, 400));
 
 		// Change window properties
 		primaryStage.setTitle("Polish Notator");
@@ -45,7 +45,7 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		launch(args);
 	}
 
