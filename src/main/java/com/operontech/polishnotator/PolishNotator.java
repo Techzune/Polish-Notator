@@ -29,7 +29,7 @@ import java.util.Stack;
  */
 public class PolishNotator {
 
-	public static String convertToStandard(final String input) {
+	public static String convertFromStandard(final String input) {
 		// Reverse the input to loop over
 		final String rExpression = new StringBuilder(input).reverse().toString();
 
