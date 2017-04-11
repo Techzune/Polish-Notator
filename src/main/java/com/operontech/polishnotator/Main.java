@@ -26,9 +26,18 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class Main extends Application {
+
+	// This should always be the next version after the current
+	// example: we are on b2, so next is b3
+	final String NEXT_VER = "b2";
 
 	@Override
 	public void start(final Stage primaryStage) throws Exception {
@@ -43,10 +52,27 @@ public class Main extends Application {
 
 		// Display the stage
 		primaryStage.show();
+
+		if (checkForUpdate()) {
+			final Alert alert = new Alert(Alert.AlertType.INFORMATION, "There is a new update available!\nYou should go download it!", ButtonType.OK);
+			alert.show();
+		}
 	}
 
 	public static void main(final String[] args) {
 		launch(args);
 	}
 
+	public boolean checkForUpdate() {
+		try {
+			final String UPDATE_URL = "https://bitbucket.org/Techzune/polish-notator/downloads/Polish%20Notator-" + NEXT_VER + ".jar";
+			HttpURLConnection.setFollowRedirects(false);
+			final HttpURLConnection con = (HttpURLConnection) new URL(UPDATE_URL).openConnection();
+			con.setRequestMethod("GET");
+			return (con.getResponseCode() != HttpURLConnection.HTTP_NOT_FOUND);
+		} catch (final Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }
