@@ -35,7 +35,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="850.0" style="-fx-background-color: #3F51B5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.operontech.polishnotator.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="850.0" style="-fx-background-color: #3F51B5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.operontech.polishnotator.Controller">
     <Pane layoutX="53.0" layoutY="30.0">
         <Label style="-fx-text-fill: #FFFFFF;" text="standard notation:">
             <font>
@@ -48,12 +48,12 @@
             </font>
         </TextField>
     </Pane>
-    <Button id="buttonConvert" layoutX="149.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="70.0" prefWidth="400.0" text="convert to polish notation" textOverrun="CLIP">
+    <Button id="buttonConvert" layoutX="149.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="70.0" prefWidth="400.0" text="convert to polish notation" textOverrun="CLIP">
         <font>
             <Font name="Roboto Bold" size="26.0" />
         </font>
     </Button>
-    <Pane layoutX="53.0" layoutY="290.0">
+    <Pane layoutX="53.0" layoutY="342.0">
         <TextField fx:id="textFieldOutput" accessibleText="polish notation input" editable="false" layoutY="34.0" prefHeight="32.0" prefWidth="592.0" promptText="output">
             <font>
                 <Font name="Consolas" size="24.0" />
@@ -65,7 +65,7 @@
             </font>
         </Label>
     </Pane>
-    <Rectangle arcHeight="5.0" fill="#303f9f" height="400.0" layoutX="672.0" stroke="#303f9f" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);" width="2.0">
+    <Rectangle arcHeight="5.0" fill="#303f9f" height="450.0" layoutX="672.0" stroke="#303f9f" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);" width="2.0">
         <effect>
             <DropShadow />
         </effect>
@@ -81,60 +81,233 @@
         <rowConstraints>
             <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
-        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="NOT ~">
+        <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonNot" prefHeight="35.0" prefWidth="100.0" text="NOT ~" textAlignment="CENTER">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="AND •" GridPane.columnIndex="1">
+        <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonAnd" prefHeight="35.0" prefWidth="100.0" text="AND •" textAlignment="CENTER" GridPane.columnIndex="1">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="OR ∨" GridPane.columnIndex="2">
+        <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonOr" prefHeight="35.0" prefWidth="100.0" text="OR ∨" textAlignment="CENTER" GridPane.columnIndex="2">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0" prefWidth="100.0" text="IF, THEN ⊃" GridPane.columnIndex="4">
+        <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonIfThen" prefHeight="35.0" prefWidth="100.0" text="IF, THEN ⊃" textAlignment="CENTER" GridPane.columnIndex="4">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
-        <Button focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0" prefWidth="100.0" style="-fx-alignment: center-left;" text="ONLY IF ≡" GridPane.columnIndex="3">
+        <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonOnlyIf" prefHeight="35.0" prefWidth="100.0" text="ONLY IF ≡" textAlignment="CENTER" GridPane.columnIndex="3">
             <font>
                 <Font name="Roboto Condensed" size="16.0" />
             </font>
         </Button>
     </GridPane>
-   <Text fill="WHITE" layoutX="690.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BETA 1" textAlignment="CENTER" underline="true" wrappingWidth="145.2923583984375">
-      <font>
-         <Font name="Roboto" size="24.0" />
-      </font>
-   </Text>
-   <Text fill="#cccccc" layoutX="690.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1) input standard notation" wrappingWidth="145.2923583984375">
-      <font>
-         <Font name="Roboto" size="16.0" />
-      </font>
-   </Text>
-   <Text fill="#cccccc" layoutX="690.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2) press the convert button" wrappingWidth="145.2923583984375">
-      <font>
-         <Font name="Roboto" size="16.0" />
-      </font>
-   </Text>
-   <Text fill="#cccccc" layoutX="690.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3) magic happens!" wrappingWidth="145.2923583984375">
-      <font>
-         <Font name="Roboto" size="16.0" />
-      </font>
-   </Text>
-   <Hyperlink alignment="CENTER" layoutX="690.0" layoutY="376.0" onAction="#showBitBucket" prefHeight="13.0" prefWidth="145.0" text="view source code" textAlignment="CENTER" textFill="WHITE" underline="true">
-      <font>
-         <Font name="Roboto Light" size="12.0" />
-      </font>
-   </Hyperlink>
-   <Hyperlink alignment="CENTER" layoutX="682.0" layoutY="361.0" onAction="#showBitBucket" prefHeight="21.0" prefWidth="161.0" text="© Jordan Stremming 2017" textAlignment="CENTER" textFill="WHITE">
-      <font>
-         <Font name="Roboto Light" size="12.0" />
-      </font>
-   </Hyperlink>
+    <Text fill="WHITE" layoutX="690.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BETA 2" textAlignment="CENTER" underline="true" wrappingWidth="145.2923583984375">
+        <font>
+            <Font name="Roboto" size="24.0" />
+        </font>
+    </Text>
+    <Text fill="#cccccc" layoutX="690.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1) input standard notation" wrappingWidth="145.2923583984375">
+        <font>
+            <Font name="Roboto" size="16.0" />
+        </font>
+    </Text>
+    <Text fill="#cccccc" layoutX="690.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2) press the convert button" wrappingWidth="145.2923583984375">
+        <font>
+            <Font name="Roboto" size="16.0" />
+        </font>
+    </Text>
+    <Text fill="#cccccc" layoutX="690.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3) magic happens!" wrappingWidth="145.2923583984375">
+        <font>
+            <Font name="Roboto" size="16.0" />
+        </font>
+    </Text>
+    <Hyperlink alignment="CENTER" layoutX="690.0" layoutY="430.0" onAction="#showBitBucket" prefHeight="13.0" prefWidth="145.0" text="view source code" textAlignment="CENTER" textFill="WHITE" underline="true">
+        <font>
+            <Font name="Roboto Light" size="12.0" />
+        </font>
+    </Hyperlink>
+    <Hyperlink alignment="CENTER" layoutX="682.0" layoutY="417.0" onAction="#showBitBucket" prefHeight="21.0" prefWidth="161.0" text="© Jordan Stremming 2017" textAlignment="CENTER" textFill="WHITE">
+        <font>
+            <Font name="Roboto Light" size="12.0" />
+        </font>
+    </Hyperlink>
+    <GridPane id="gridpaneOperators" alignment="CENTER" layoutX="89.0" layoutY="160.0" prefHeight="80.0" prefWidth="520.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="35.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="A">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="B" GridPane.columnIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="C" GridPane.columnIndex="2">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="D" GridPane.columnIndex="3">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="E" GridPane.columnIndex="4">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="F" GridPane.columnIndex="5">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="G" GridPane.columnIndex="6">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="H" GridPane.columnIndex="7">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="I" GridPane.columnIndex="8">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="J" GridPane.columnIndex="9">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="K" GridPane.columnIndex="10">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="L" GridPane.columnIndex="11">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="M" GridPane.columnIndex="12">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="N" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="O" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="P" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="Q" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="R" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="S" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="T" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="U" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="V" GridPane.columnIndex="8" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="W" GridPane.columnIndex="9" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="X" GridPane.columnIndex="10" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="Y" GridPane.columnIndex="11" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="Z" GridPane.columnIndex="12" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="(" GridPane.columnIndex="13">
+            <font>
+                <Font name="Roboto Condensed Bold" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text=")" GridPane.columnIndex="14">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="[" GridPane.columnIndex="13" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#actionButtonLetter" prefHeight="35.0" prefWidth="35.0" text="]" GridPane.columnIndex="14" GridPane.rowIndex="1">
+            <font>
+                <Font name="Roboto Condensed" size="16.0" />
+            </font>
+        </Button>
+    </GridPane>
 </Pane>

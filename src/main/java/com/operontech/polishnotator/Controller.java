@@ -24,6 +24,7 @@ package com.operontech.polishnotator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.awt.*;
@@ -73,6 +74,16 @@ public class Controller {
 			Desktop.getDesktop().browse(new URI("http://bitbucket.org/Techzune/polish-notator"));
 		} catch (final Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	protected void actionButtonLetter(final ActionEvent e) {
+		final Button eButton = (Button) e.getSource();
+		if (eButton != null) {
+			textFieldInput.replaceSelection(eButton.getText());
+		} else {
+			System.out.println("ERROR: button doesn't exist");
 		}
 	}
 
